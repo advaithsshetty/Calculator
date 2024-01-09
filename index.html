@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Calculator</title>
+    <link rel="icon" href="./assets/favicon.ico"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body onload="showPopup();">
+    <div class="container">
+            <table class="calculator">
+                <tr>
+                  <td colspan="4"><input type="text" id="operations" readonly></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="text" id="display" readonly></td>
+                </tr>
+                <tr>
+                    <td><button class="clear-btn"  onclick="clearDisplay()">C</button></td>
+                    <td><button class="clear-btn" onclick="backspace()">←</button></td>
+                    <td><button class="clear-btn" onclick="toggleFullscreen()">FS</button></td>
+                    <td><button class="operator-btn"  onclick="appendOperator('/')">÷</button></td>
+                </tr>
+                <tr>
+                    <td><button class="number-btn"  onclick="appendCharacter(7)">7</button></td>
+                    <td><button class="number-btn"  onclick="appendCharacter(8)">8</button></td>
+                    <td><button class="number-btn"  onclick="appendCharacter(9)">9</button></td>
+                    <td><button class="operator-btn"  onclick="appendOperator('*')">×</button></td>    
+                </tr>
+                <tr>
+                    <td><button class="number-btn"  onclick="appendCharacter(4)">4</button></td>
+                    <td><button class="number-btn"  onclick="appendCharacter(5)">5</button></td>
+                    <td><button class="number-btn"  onclick="appendCharacter(6)">6</button></td>
+                    <td><button class="operator-btn"  onclick="appendOperator('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="number-btn"  onclick="appendCharacter(1)">1</button></td>
+                    <td><button class="number-btn"  onclick="appendCharacter(2)">2</button></td>
+                    <td><button class="number-btn"  onclick="appendCharacter(3)">3</button></td>
+                    <td><button class="operator-btn" onclick="appendOperator('+')">+</button></td>  
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="number-btn span-two-columns" onclick="appendCharacter(0)">0</button></td>
+                    <td><button class="number-btn"  onclick="appendCharacter('.')">.</button></td>
+                    <td><button class="operator-btn" onclick="calculateResult()">=</button></td>
+                </tr>
+            </table>
+    </div>
+    <div id="popupContainer" class="popup-container">
+        <div class="popup-content">
+            <span onclick="closePopup()" class="close-btn">&times;</span>
+            <p>Turn Fullscreen on for better experience</p>
+        </div>
+    </div>
+    <script src="./assets/script.js"></script>
+</body>
+</html>
